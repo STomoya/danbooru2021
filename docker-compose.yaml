@@ -11,6 +11,5 @@ services:
         - UID=${USERID}
     volumes:
       - .:/usr/src
-      - /mnt/D/Data/chibiv2:/usr/src/data
     working_dir: /usr/src
     shm_size: '8gb'
