@@ -71,7 +71,7 @@ def main():
 
             status.update(**{
                 'Loss/train': loss.item(),
-                'Accuracy/train': correct/len(images.size(0)),
+                'Accuracy/train': correct/images.size(0),
                 'LR': optimizer.param_groups[0]['lr']})
 
         model.eval()

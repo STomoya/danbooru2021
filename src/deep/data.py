@@ -46,7 +46,6 @@ class ImageFolder(Dataset):
         super().__init__()
 
         self._class_names = sorted([os.path.basename(folder) for folder in glob.glob(os.path.join(root, '*'))])
-        self._class_names = self._class_names[1:]
         images = []
         labels = []
         for index, class_name in enumerate(self._class_names):
