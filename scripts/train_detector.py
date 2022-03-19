@@ -13,11 +13,11 @@ def get_args():
     parser.add_argument('--data-root', default='./data/human')
     parser.add_argument('--ssl-weights')
 
-    parser.add_argument('--epochs', default=500, type=int)
+    parser.add_argument('--epochs', default=100, type=int)
     parser.add_argument('--batch-size', default=64, type=int)
-    parser.add_argument('--lr', default=0.03, type=float)
+    parser.add_argument('--lr', default=0.0001, type=float)
     parser.add_argument('--momentum', default=0.9, type=float)
-    parser.add_argument('--rel-milestones', default=[0.6, 0.8], type=float, nargs='+')
+    parser.add_argument('--rel-milestones', default=[0.4, 0.6, 0.9], type=float, nargs='+')
 
     parser.add_argument('--amp', default=False, action='store_true')
     parser.add_argument('--log-file', default='log.log')

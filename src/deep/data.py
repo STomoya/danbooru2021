@@ -22,7 +22,7 @@ def get_dataset(root: str, batch_size: int):
 def default_transform(test=False):
     '''make image transformations'''
     transform = [
-        T.RandomResizedCrop(224, scale=(0.3, 1.)),
+        T.Resize((224, 224)),
         T.ToTensor(),
         # Danbooru2020 mean and std
         T.Normalize([0.7106, 0.6574, 0.6511], [0.2561, 0.2617, 0.2539])]
