@@ -35,6 +35,11 @@ def update_done(current):
     with open('done', 'w') as fout:
         fout.write(str(current))
 
+def load_difference_file():
+    with open('../static/2021minus2020.txt', 'r') as fin:
+        filelist = fin.read().strip().split('\n')
+    return filelist
+
 def make_partial_filelist(current:int, filelist):
     folder = str(current).zfill(4)
     filelist = [file for file in filelist if f'./original/{folder}' in file]
@@ -96,8 +101,10 @@ def main():
     if os.path.exists(TEMP):
         shutil.rmtree(TEMP)
 
+    filelist = load_difference_file()
+
     for intfolder in range(start, TOTAL_FOLDERS):
-        make_partial_filelist(intfolder)
+        make_partial_filelist(intfolder, filelist)
         download(TEMP)
         downloaded_files = glob.glob(os.path.join(TEMP, '**/*'), recursive=True)
         downloaded_files = [file for file in downloaded_files if os.path.isfile(file)]
