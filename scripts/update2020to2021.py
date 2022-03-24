@@ -36,7 +36,7 @@ def update_done(current):
         fout.write(str(current))
 
 def load_difference_file():
-    with open('../static/2021minus2020.txt', 'r') as fin:
+    with open('./static/2021minus2020.txt', 'r') as fin:
         filelist = fin.read().strip().split('\n')
     return filelist
 
