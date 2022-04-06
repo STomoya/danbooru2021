@@ -1,4 +1,5 @@
 
+import copy
 import argparse
 import os
 
@@ -91,7 +92,7 @@ def main():
 
         if epoch_status['Loss/val'] < best_loss:
             best_loss = epoch_status['Loss/val']
-            best_model = model.state_dict()
+            best_model = copy.deepcopy(model.state_dict())
 
     status.plot_loss(os.path.join(args.folder, 'loss.png'))
 

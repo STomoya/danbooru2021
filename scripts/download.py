@@ -3,8 +3,6 @@ import argparse
 import os
 import subprocess
 
-from src import meta_utils
-
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--idlist', required=True)
